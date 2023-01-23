@@ -1,0 +1,116 @@
+<!-- O nome index.html é um nome padrão para o arquivo principal da nossa página-->
+<!-- HTML é dividido em Tags, que são demarcadas como: <tag></tag> -->
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title> Barbearia Alura</title>
+        <link rel="stylesheet" href="style.css">      
+    </head>
+    <body>
+        <!-- criando cabeçalho para nossa pagina-->
+        <header>
+            <h1 class="titulo-principal">Barbearia Alura</h1>
+        </header>
+        <img id="banner" src="banner.jpg">
+
+        <div class="principal">
+
+            <h2 class="titulo-centralizado">Sobre a Barbearia Alura</h2>
+
+            <p>Localizada no coração da cidade a <strong>Barbearia Alura</strong> traz para o mercado o que há de melhor para o seu cabelo e barba. Fundada em 2019, a Barbearia Alura já é destaque na cidade e conquista novos clientes a cada dia.</p>
+        
+            <p id="paragrafo-2"><em>Nossa missão é: <strong>"Proporcionar auto-estima e qualidade de vida aos clientes"</strong>.</em></p>
+        
+            <p>Oferecemos profissionais experientes e antenados às mudanças no mundo da moda. O atendimento possui padrão de excelência e agilidade, garantindo qualidade e satisfação dos nossos clientes.</p>
+            
+        </div>
+        <!--Novas funcionalidades-->
+        <div class="beneficios">
+            <h3 class="titulo-centralizado">Beneficios</h3>
+
+            <!--Lista não ordenada-->
+            <ul>
+                <!--item de cada lista-->
+                <li class="itens">*Atendimento aos clientes</li>
+                <li class="itens">*Espaço diferenciado</li>
+                <li class="itens">*Localização</li>
+                <li class="itens">*Profissionais Qualificados</li>           
+            </ul>
+
+            <img src="beneficios.jpg" class="imagembeneficios">
+        </div>
+    </body>
+    
+</html>
+
+<!--
+    Algumas tags e seus significados:
+    <h>: é o Título, podendo ter diversos tamanhos. h1, h2, h3... Quando maior o número, menor o titulo
+    <p>: são parágrafos
+    <strong>: coloca o texto em negrito
+    <em>: Transforma em itálico
+    <!DOCTYPE>: tag para o navegador identificar o arquivo html e adotar um padrão seguindo a versão do html mencionada. No caso, versão 5.
+    <html lang="pt-br">: tag para demarcar no nosso arquivo tudo que deve ser renderizado no navegador e o idioma padrão.
+        Através dele vem a janela "traduzir conteúdo". Ele identifica outro idioma e traduz
+    <meta charset="UTF-8">: tag para marcar qual codificação do idioma estamos usando
+    <title>: tag para nomear o título da janela no browser
+    O HTML é divido em 2 partes: head e body.
+    HEAD são as informações que estamos passando pro navegador
+    BODY são as informações que serão mostradas na página.
+
+    Vamos adicionar CSS para mudar o layout do nosso HTML (Cores, fontes, etc)
+    Existem 3 formas de inserir o CSS no HTML
+    A primeira é usar "style" dentro da tag. Também chamada de CSS Inline
+    "font-size: 20px": Alteramos a fonte do texto do paragrafo para 20 pixels (por padrão é 16px)
+    "text-align: center": centralizando o texto
+    Para inserir mais de um CSS em um tag, separamos por ';'. <p style="font-size: 20px; text-align: center;"></p>
+
+    A segundo é setar um style no head para todas as tags deste arquivo html.
+    Removendo todas as tags style="text-align: center", a página deve se manter a mesma
+        <style>
+            p {
+                text-align: center;
+            }
+        </style>
+    A partir dessa inserção, todos as tags <p> seguirão esse modelo
+
+    A terceira forma (forma correta) é criar um arquivo "style.css" e importar no head, adicionando: 
+     <link rel="stylesheet" href="style.css">
+     <link>: tag para ligar um arquivo a outro
+     rel="": relacionamento desse link. stylesheet para estilo
+     href="": onde está o arquivo linkado
+
+    "background: #CCCCCC": Alterar a cor de fundo (para cinza (#CCCCCC)) do titulo, paragrafo, etc. As cores são definidas utilizando dicionario hexadecimal
+    Posso alterar a cor do corpo também, basta inserir na tag body.
+
+    Podemos colocar identificadores em nossas tags. No caso do segundo paragrafo, temos uma alteração
+    específica para ele. Colocaremos um identificador para o CSS o identificar.
+    
+    Inserir imagem de fundo:
+    Assim como o CSS, a imagem é uma informação que queremos inserir na página. Então colocaremos no body
+    Tag <img>, src é onde a imagem está/endereço. Como a imagem está na própria pasta do arquivo, colocamos apenas o nome do arquivo
+    <img src="banner.jpg">
+
+    Para inserirmos CSS na imagem, colocamos um identificador na tag da imagem.
+
+    A partir de agora, iremos inserir novas funcionalidades na paǵina
+    <ul> unordered list
+    <ol> ordered list
+    <li> list item
+
+    Utilizamos o conceito de classes de CSS pra marcar estilo paras as listas. Com isso, não será necessário identificar
+    cada item da lista.
+
+    Conseguimos separar nossa página web em divisões. Basta usar a tag <div>
+    
+    Cada linha usa o conceito de block. Ele não deixa que consigamos inserir nada ao lado de uma linha.
+    Queremos colocar uma imagem ao lado da lista e precisaremos contornar isso.
+    O elemento precisará ser inline e block ao mesmo tempo para conseguir alterar os espaçamentos.
+    
+    Vamos criar um cabeçalho para nossa página.
+    Para isso usamos a tag <header>.
+    Alteraremos o h1 para h2, h2 para h3 para adicionar o texto do header.
+    No cabeçalho colocamos geralmente o nome do local e informações importantes
+-->
