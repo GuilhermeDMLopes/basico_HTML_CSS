@@ -1,0 +1,155 @@
+/*Arquivo de estilo para a página produtos.html*/
+
+header {
+    background: #BBBBBB;
+    /*Vamos colocar um espaçamento interno pra cima e pra baixo para darmos uma margem pro nosso conteudo*/
+    padding: 20px;
+}
+
+/*Estilo para a classe da div que engloba o cabeçalho e os links. Vamos fixar um tamanho para ela*/
+.caixa {
+    /*Dando um posicionamento para a div para conseguirmos alinhas os links dentro dela. Tem que ser relativo*/
+    position: relative;
+    /*Largura padrão da web já que a maioria das telas tem resolução de 1260px de largura*/
+    width: 940px;
+    /*Pegando o espaçamento de forma automatica pela direita e pela esquerda*/
+    margin: 0 auto 0 auto;
+}
+
+/*Estilo criado para alterar o posicionamento dos links na tela*/
+nav {
+    /*Posição absoluta*/
+    position: absolute;
+    /*Em relação ao topo. Nossa logo tem 220px, vamos colocar a metade*/
+    top: 110px;
+    /*Em relação a direita*/
+    right: 0;
+}
+
+/*Todos os itens da lista que estão dentro da tag navegação, receberão este estilo*/
+nav li {
+    display: inline;      
+}
+
+/*Todos os itens com âncoras que estão dentro da tag navegação, receberão este estilo*/
+nav a {
+    /*Transforma os links da nossa navegação em texto maíusculo*/
+    text-transform: uppercase;
+    /*Altera a cor da letra*/
+    color: #000000;
+    /*Altera a fonte da escrita em Negrito*/
+    font-weight: bold;
+    /*Altera o tamanho da fonte*/
+    font-size: 22px;
+    /*Remove o sublinhado do link*/
+    text-decoration: none;
+     /*Alterando espaçamento entre os itens (externamente)
+    Como eu quero um espaçamento para a esquerda, preciso fazer: 
+    0 para o topo, 0 para direita, 0 para baixo e 15px para esquerda.*/
+    margin: 0 0 0 15px;        
+}
+
+/*Mapeia o comportamento de quando o mouse esta em cima do elemento*/
+/*Onde eu quero que a pagina tenha uma interação quando estiver no evento acima*/
+/*No caso abaixo, os links dentro do menu de navegação*/
+nav a:hover {
+    /*Altera a cor do item quando mouse passar por cima*/
+    color: #C78C19;
+    /*Além de mudar a cor, o item fica sublinhado*/
+    text-decoration: underline;
+}
+
+/*Separando os itens de forma geral*/
+.produtos {
+    width: 950px;
+    margin: 0 auto;
+    /*Aumentando espaçamento interno entre eles 50px pra cima e para baixo e 0 para os lados*/
+    padding: 50px 0;
+}
+
+/*Padronizando os itens*/
+.produtos li {
+    /*Colocando os itens lado a lado*/
+    display: inline-block;
+    /*O conteúdo de cada item deve ser centralizado*/
+    text-align: center;
+    /*Cada item deve ter 1/3 do tamanho deles*/
+    width: 30%;
+    /*Iremos orientar os itens atraves da parte superior da pagina*/
+    vertical-align: top;
+    /*Para ver o tamanho dos elementos, vamos colocar cor em cada um*/
+    /*background: #CCCCCC;*/
+    /*Colocando espaçamento entre eles. 0 pra cima e pra baixo e 1.5% para os lados*/
+    margin: 0 1.5%;
+    /*Aumentando espaçamento interno. 30px pra cima e pra baixo e 20px para os lados*/
+    padding: 30px 20px;
+    /*Junta o espaçamento lateral com o porcentual*/
+    box-sizing: border-box;
+    /*Vamos montar a borda, ela tem 3 aspectos importantes: tamanho, tipo e cor. Ela fica entre o padding e o margin*/
+    /*border-color: #000000;
+    border-width: 2px;
+    border-style: solid;*/
+    border: 2px solid #000000;
+    /*Colocando borda arredondada. Posso alterar cada ponta da borda em específico*/ 
+    border-radius: 10px;   
+}
+
+/*Queremos impactar uma ação no produtos li quando mouse passar por cima*/
+.produtos li:hover {
+    /*Mudar cor da borda*/
+    border-color: #C78C19;    
+}
+
+/*Queremos impactar uma ação no produtos li quando clicar com o mouse*/
+.produtos li:active {
+    /*Mudar cor da borda*/
+    border-color: #088C19;
+}
+
+/*Alterar outro elemento dentro de li quando mouse estiver por cima*/
+/*Quando mouse estiver por cima do li, alterar o h2*/
+.produtos li:hover h2 {
+    /*Alterando tamanho da fonte*/
+    font-size: 34px;
+}
+
+/*Padronizando os títulos*/
+.produtos h2 {
+    /*Mudando a fonte*/
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/*Padronizando descrição*/
+.produto-descricao {
+    font-size: 18px;
+}
+
+/*Padronizando os preços*/
+.produto-preco {
+    font-size: 22px;
+    font-weight: bold;
+    /*Espaçamento externo com a descrição. Mesma coisa que margin-top:10px*/
+    margin: 10px 0 0;
+}
+
+/*Criando estilo do rodapé*/
+footer {
+    /*Centralizando texto*/
+    text-align: center;
+    /*Colocando uma imagem de fundo. Estamos sem imagem no momento*/
+    /*background: url("bg.jpg");*/
+    background: #000000;
+    /*Espaçamento interno. 40px pra cima e pra baixo e 0 para os lados*/
+    padding: 40px 0;
+}
+
+/*Alterando o texto do rodapé*/
+.copyright {
+    /*Mudando a cor do texto*/
+    color: #FFFFFF;
+    /*Mudando fonte*/
+    font-size: 13px;
+    /*Espaçamento da imagem com a parte superior*/
+    margin: 20px 0;
+}

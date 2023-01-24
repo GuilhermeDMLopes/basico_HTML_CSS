@@ -1,56 +1,30 @@
-/*Arquivo que contém os estilos CSS de index.html
-O CSS corresponde a mesma estrutura do HTML. Portanto, devemos seguir os estilos conforme o arquivo .html
-Como o body vem antes do paragrafo no html, ele deve vir antes do paragrafo no CSS
-
-    CURIOSIDADE: Demarcamos as cores em haxadecimal com # + 6 digitos (_ _ _ _ _ _)
-    Os dois primeiro digitos são referentes ao vermelho, os 2 proximos ao verde e os 2 ultimos ao azul
-    0 = Ausencia de cor
-    F = Máximo de cor
-
-    Usando RGB, fazemos:
-    rgb([0-255],[0-255],[0-255])
-
-O CSS tem 4 dimensões importantes. Podem ser definidos por pixels ou porcentagem da tela
-Altura (height)
-Largura (width)
-Espaçamento interno (Padding)
-Espaçamento externo (Margin) pode ser da esquerda ou para direita (margin-left, margin-right)
-
+/*
 */
 body {
     /*background: #CCCCCC;*/
 }
 
-/*Estilo para a imagem*/
 #banner {
     width: 100%;
 }
-/*---DEPOIS DA ALTERAÇÕES DO CABEÇALHO, h1 e h2 serão substitidos por uma classe
-h1 {
-    text-align: center;
-}*/
 
 p {
     text-align: center;
     
 }
 
-/*Marcar tag específica pelo identificador. Utilizamos # + nome do identificador*/
 #paragrafo-2 {
     font-size: 20px
 }
 
-/*Definir uma cor para todo texto em NEGRITO*/
 strong {
     color: red;
 }
 
-/*Também podemos definir cor para o texto em negrito em um contexto específico, no caso, dentro da tag em*/
 em strong {
     color: green;
 }
 
-/*Para dar estilo a uma classe, usamos '.'*/
 .itens {
     font-style: italic;
 }
@@ -64,26 +38,17 @@ em strong {
     padding-left: 20px;
 }
 
-/*Substituindo h1 e h2 depois do cabeçalho*/
 .titulo-centralizado {
     text-align: center;
 }
 
 .beneficios {   
     background: #FFFFFF;
-    /*Adicionando espaçamento interno para todos os lados*/
     padding: 20px;
 }
 
-/*h2 {
-    text-align: center;
-}*/
-
 ul {
-    /*Através do 'display' conseguimos alterar se ele é inline, block, ambos, etc
-    inline-block ocupa apenas o espaço do texto e permite que seja colocado algo ao lado*/
     display: inline-block;
-    /*Precisaremos alinhar a imagem com os itens da lista*/
     vertical-align: top;
     width: 20%;
     margin-right: 15%;
