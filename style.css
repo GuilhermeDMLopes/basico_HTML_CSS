@@ -1,59 +1,211 @@
-/*
-*/
-body {
-    /*background: #CCCCCC;*/
-}
-
-#banner {
-    width: 100%;
-}
-
-p {
-    text-align: center;
-    
-}
-
-#paragrafo-2 {
-    font-size: 20px
-}
-
-strong {
-    color: red;
-}
-
-em strong {
-    color: green;
-}
-
-.itens {
-    font-style: italic;
-}
-
-.principal {
-    background: #CCCCCC;
-    padding: 30px;
-}
-
-.titulo-principal {
-    padding-left: 20px;
-}
-
-.titulo-centralizado {
-    text-align: center;
-}
-
-.beneficios {   
-    background: #FFFFFF;
+header {
+    background: #BBBBBB;
     padding: 20px;
 }
 
-ul {
-    display: inline-block;
-    vertical-align: top;
-    width: 20%;
-    margin-right: 15%;
+.caixa {
+    position: relative;
+    width: 940px;
+    margin: 0 auto 0 auto;
 }
 
-.imagembeneficios {
+nav {
+    position: absolute;
+    top: 110px;
+    right: 0;
+}
+
+nav li {
+    display: inline;      
+}
+
+nav a {
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+    margin: 0 0 0 15px;        
+}
+
+nav a:hover {
+    color: #C78C19;
+    text-decoration: underline;
+}
+
+.produtos {
+    width: 950px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.produtos li {
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+    border-radius: 10px;   
+}
+
+.produtos li:hover {
+    border-color: #C78C19;    
+}
+
+.produtos li:active {
+    border-color: #088C19;
+}
+
+.produtos li:hover h2 {
+    font-size: 34px;
+}
+
+.produtos h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.produto-descricao {
+    font-size: 18px;
+}
+
+.produto-preco {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0 0;
+}
+
+footer {
+    text-align: center;
+    background: #000000;
+    padding: 40px 0;
+}
+
+.copyright {
+    color: #FFFFFF;
+    font-size: 13px;
+    margin: 20px 0;
+}
+
+/*Fazendo CSS para contato.html*/
+main {
+    /*O conteúdo com 940px de largura*/
+    width: 940px;
+    /*Centralizando o formulário. 0 para cima e pra baixo e auto para esquerda e direita*/
+    margin: 0 auto;
+}
+
+form {
+    /*Espaço entre cabeçalho e formulário, rodapé e formulário de 40px*/
+    margin: 40px 0;
+}
+
+/*Extendendo a mesma configuração para outro elemento, usamos a ','. Queremos deixar os legends iguais aos labels*/
+form label, form legend {
+    /*Por padrão, os labels são inline. Ou seja, ocupam apenas o espaço utilizado
+    Queremos que ele ocupe todo o espaço de sua linha para conseguirmos fazer a quebra de linha
+    Alteramos seu display de inline para block*/
+    display: block;
+    /*Aumentando fonte*/
+    font-size: 20px;
+    /*Dando uma margem para baixo de 10px*/
+    margin:0 0 10px;
+}
+
+/*Extendendo a mesma configuração para outro elemento, usamos a ','. Queremos deixar a textarea igual ao input*/
+/*form input, form textarea {
+        Por padrão, os inputs são inline. Ou seja, ocupam apenas o espaço utilizado
+        Queremos que ele ocupe todo o espaço de sua linha para conseguirmos fazer a quebra de linha
+        Alteramos seu display de inline para block
+    display:block;
+        Dando uma margem para baixo de 10px
+    margin:0 0 20px;
+        10px para cima e para baixo e 25px para os lados no espaçamento interno (entre contúdo e borda)
+    padding: 10px 25px;
+        Largura do campo, ocupando 50% da pagina
     width: 50%;
 }
+Como será necessário criar um CSS para os inputs do radiobox. Iremo colocar um classe para os demais e fazer um específico
+para o radiobox.*/
+.input-padrao {
+    display:block;
+    margin:0 0 20px;
+    padding: 10px 25px;
+    width: 50%;
+}
+
+/*Criando estilo para o checkbox*/
+.checkbox {
+    /*Margem para cima e para baixo de 20px e 0 para os lados*/
+    margin: 20px 0;
+}
+
+/*Estilo do botão enviar*/
+.enviar {
+    /*Aumentando tamanho*/
+    width: 40%;
+    /*Espaçamento interno entre a borda e o texto. 15px para cima e para baixo e 0 para os lados*/
+    padding: 15px 0;
+    /*Cor de fundo*/
+    background: orange;
+    /*Cor de texto*/
+    color: white;
+    /*Texto em negrito*/
+    font-weight: bold;
+    /*Tamanho da fonte*/
+    font-size: 18px;
+    /*Alterando borda*/
+    border: none;
+    /*Campo arredondado*/
+    border-radius: 5px;
+    /*Propriedade que permite alguma mudança após certo tempo. Depois de 1s ele faz a alteração no background em .enviar:hover. Substituindo background por all, 
+    faz alteração em todos os elementos*/
+    transition: 1s all;
+    /*Sempre que o mouse estiver por cima do elemento, o cursor deve mudar*/
+    cursor: pointer;
+}
+
+/*Alterar botão quando mouse estiver em cima*/
+.enviar:hover {
+    /*Mudar a cor de fundo*/
+    background: darkorange;
+    /*Aumenta botão em 20% em todos os aspectos*/
+    /*transform: scale(1.2);*/
+    /*Inclina o item em graus. O ultimo item sempre sobrescreve o anterior. No caso o ultimo transform alterou o primeiro*/
+    /*transform: rotate(70deg);*/
+    /*Para não ter esse problema, fazemos*/
+    /*transform: rotate(70deg) scale(1.2);*/
+    /*Iremos manter apenas*/
+    transform: scale(1.2);
+}
+
+/*Criando Estilo para a tabela*/
+table {
+    /*Criando espaçamento externo de 20px para cima e 40px para baixo*/
+    margin: 20px 0 40px;
+}
+
+/*Criando Estilo para o cabeçalho da tablea*/
+thead {
+    background: #555555;
+    /*Cor do item*/
+    color: white;
+    font-weight: bold;
+}
+
+/*Criando estilo nas celulas da tabela*/
+td, th {
+    /*Criando borda de 1px, solida e cor preta. Para demarcar linhas e colunas*/
+    border: 1px solid #000000;
+    /*Espaçamento interno. 8px para cima e para baixo e 15px para os lados*/
+    padding: 8px 15px;
+}
+
+
+/*O CSS possui uma hierarquia a ser executado. Podemos fazer CSS de id específico(#), classe(.) e uma tag(p) por exemplo, ou um style no Html
+O CSS da prioridades seguindo: style>id>class>tag. Logo, se anteriormente eu havia setado uma cor para uma tag e depois ela entrou em uma classe,
+ao alterar a cor do elemento na classe, o CSS da prioridade a cor da classe.
+*/
