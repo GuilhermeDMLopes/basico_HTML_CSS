@@ -4,4 +4,6 @@
 
 - parte2: Avançando um pouco mais sobre HTML e CSS. Como deixar a pagina mais interativa com ação do mouse, adicionando borda, imagens, rodapé, posicionamento, etc.
 
--parte3: Avançando na página da barbearia, criamos uma ágina de contato utilizando formularios, validações e tabelas.
+- parte3: Avançando na página da barbearia, criamos uma ágina de contato utilizando formularios, validações e tabelas.
+
+- parte4: Iremos retrabalhar a página inicial. Utilizamos conceitos de pseudoelementos, responsividades, adicionamos mapas, vídeos, degrade no fundo e dentre outras coisas descritas no código.

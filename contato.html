@@ -1,4 +1,3 @@
-<!--Nova página sobre os contatos -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,11 +22,8 @@
         </header>
 
         <main>
-            <!--Inserindo formulário-->
             <form>
-                <!-- descrição do input-->
                 <label for="nomesobrenome">Nome e Sobrenome</label>
-                <!--Entrada e o tipo de dados que deve ser recebido-->
                 <input type="text" id="nomesobrenome" class="input-padrao" required>
 
                 <label for="email">Email</label>
@@ -36,58 +32,42 @@
                 <label for="telefone">Telefone</label>
                 <input type="tel" id="telefone" class="input-padrao" required placeholder="(XX) XXXX-XXXX">
 
-                <!--Criando o campo de Mensagem da página-->
-                <!-- Posso configurar quantas linhas e colunas de texto ele terá. No caso, 30 colunas e 10 linhas-->
                 <label for="mensagem">Mensagem</label>
                 <textarea cols="30" rows="10" id="mensagem" required></textarea>
                 
                 <fieldset>
-                    <!--Inserindo texto para o radiobox-->
                     <legend>Como prefere nosso contato?</legend>
-                    <!--Criando campo de seleção. Radiobox-->
                     <label for="radio-email"><input type="radio" name="contato" value="email" id="radio-email">Email</label>
-                    <!--<input type="radio" name="contato" value="email" id="radio-email">-->
     
                     <label for="radio-telefone"><input type="radio" name="contato" value="telefone" id="radio-telefone">Telofone</label>
-                    <!--<input type="radio" name="contato" value="telefone" id="radio-telefone">-->
     
                     <label for="radio-whatsapp"><input type="radio" name="contato" value="whatsapp" id="radio-whatsapp" checked>Whatsapp</label>
-                    <!--<input type="radio" name="contato" value="whatsapp" id="radio-whatsapp">-->
                 </fieldset>
 
-                <!--Criando um seletor-->
                 <fieldset>
                     <legend>Qual horário prefere ser atendido?</legend>
                     <select>
-                        <!--Opções para o seletor-->
                         <option>Manhã</option>
                         <option>Tarde</option>
                         <option>Noite</option>
                     </select>
                 </fieldset>
 
-                <!--Criando checkbox. Colocaremos o input dentro do label. É uma outra formas de linkar ambos sem precisar do for-->
                 <label class="checkbox"><input type="checkbox" checked>Gostaria de receber nossas novidades por email?</label>
 
                 <input type="submit" name="contato" value="Enviar formulário" class="enviar">
                
             </form>
 
-            <!--Criando tabela-->
             <table>
-                <!--Criando cabeçalho da tabela-->
                 <thead>
-                    <!--Criando linha-->
                     <tr>
-                        <!--Criando coluna do cabeçalho-->
                         <th>Dia</th>
                         <th>Horário</th>
                     </tr>
                 </thead>
-                <!--Criando corpo da tabela-->
                 <tbody>
                     <tr>
-                        <!--Criando coluna normal-->
                         <td>Segunda</td>
                         <td>8h ~ 20h</td>
                     </tr>
@@ -111,79 +91,5 @@
 </html>
 
 <!-- 
-    Começaremos copiando toda a parte de head e rodapé de produtos, pois será igual.
-    Iremos renomear o que estiver como produtos para contato.
 
-    Chamamos de style todo arquivo CSS principal. Como iremos utilizar o mesmo CSS de produtos
-    precisaremos renomer de produtos.css para style.css. Porém, ja temos um arquivo chamado style.css
-    que é para o arquivo home.html. Iremos alterar de style.css para style-home.css e de produtos.css
-    para style.css. Feito isso, faremos as atualizações com os nomes nos arquivos html.
-
-    A partir de agora, iremos inserir formularios.
-    Um campo de busca por exemplo, é um formulario. Formulario é o repsonsavel por pegar um conteudo
-    enviar para outra pagina ou outro lugar com o conteúdo passado.
-    Utilizamos quando: 
-    1) Quando queremos enviar os dados para um servidor
-    2) Quando queremos capturar informações que o usuário digitar
-    3) Quando queremos enviar os dados para uma outra página.
-
-    Ele tem sempre uma estrutura para agrupar o que o usuário está inserindo.
-    usamos a tag <form>. Dentro dele temos as entradas de dados, usamos o <input> e ela deve ter um tipo
-    <input type="text"> por exemplo. Colocamos a descrição do input, colocando uma etiqueta para ele, usamos a tag
-    <label>. Precisamos criar uma ligação entre eles, formando pares. Para isso, adicionamos um id para o input
-    e no label, indicamos para qual input ele está se referenciando usando um for="idInput". Assim quando clicamos em 
-    cima do texto do label, eu habilito a escrita no input em que ele está referenciado.
-
-    Para enviar os dados: Todo formulário vai ter um input sem label que será do tipo "submit".
-    Como nosso SO está em português o texto desse input sera "enviar" por padrão. Podemos personalizar
-    usando value="".
-
-    Agora que criamos nossa estrutura do formulário, vamos criar um css para ele.
-    Iremos para o arquivo style.css e alterar no main.
-
-    Para adicionar o campo de mensagem da nossa página, precisaremos criar um campo de texto.
-    Ele é diferente do input e utilizamos a tag <textarea>.
-
-    Vamos agora fazer o campo selecionar, também conhecido como radiobox. Para isso criamos um 
-    input de type="radio" e valores value="email", por exemplo. Para não deixar que o usuario selecione todas as
-    opções, precisamos criar um nome para o input, name="contato" por exemplo. Assim, ele vai identificar
-    que aquele input é referente a aquele grupo de inputs. Será colocado uma div no radiobox para deixar o codigo mais 
-    organizado.
-
-    Será inserido o campo checkbox após o radiobox usand value="checkbox".
-
-    Observamos que os itens do radiobox não estao visualmente agradaveis, no entando é necessário alterar no html.
-    Vamos inserir os inputs dentro do label também.
-
-    Faremos um campo de seleção de itens pré definidos usando seletor, <select>
-
-    Facilidades e Acessibilidade nos inputs. Nossa página e campos devem estar adaptados para celular
-    mobile inputs types -> site que mostra como nossos elementos são mostrados no celular:
-    http://mobileinputtypes.com/
-
-    Cada type dentro do input se comprta de uma forma no celular. Exemplo:
-    <input type="email"> o teclado do celular estara adaptado para os caracteres de email.
-    Vamos inserir essas alterações no nosso código.
-
-    Podemos colocar inputs obrgatórios para o usuário. Basta acrescentar 'required' no final.
-
-    Também conseguimos colocar um texto "temporário" até o usuário começar a preencher.
-    Exemplo: No campo de email, colocarmos um exemplo de email para o usuário ver.
-    Para isso usamos 'placeholder=""' no final do input.
-
-    Nos checkboxes podemos deixar sugestões já marcadas para o usuário. Basta colocar 'checked' no final
-
-    Melhorando a semântica do formulário. Não utilizamos div para dividir os campos, usamos a tag <fieldset>
-    que é referente a configuração de um ou mais campos referente a um assunto específico. Faremos essa substituição dos campos
-    dentro do fieldset não temos paragrafos <p>, temos <legend>
-
-    Quando um usuário não consegue enxergar a logo muito bem, podemos adicionar mais uma questão de acessibilidade
-    para isso, adicionamos alt="" ao lado da logo para descrever a imagem.
-
-    Agora iremos fazer melhorias no botão para enviar formulário.
-
-    Terminando a página, iremos montar uma tabela com os horários de funcionamento.
-    A tag usada é <table>. Uma linha é uma tablerow <tr>. Uma célula é <td>.
-    Dividimos uma tabela em cabeçalho <thead> em que as colunas são descritas por <th>;
-    temos o corpo <tbody> e rodapé <tfoot>
 -->

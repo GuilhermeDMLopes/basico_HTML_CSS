@@ -1,3 +1,8 @@
+/*Todo o conteúdo usará a fonte Montserrat importada*/
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
 header {
     background: #BBBBBB;
     padding: 20px;
@@ -90,46 +95,23 @@ footer {
     margin: 20px 0;
 }
 
-/*Fazendo CSS para contato.html*/
 main {
-    /*O conteúdo com 940px de largura*/
-    width: 940px;
-    /*Centralizando o formulário. 0 para cima e pra baixo e auto para esquerda e direita*/
-    margin: 0 auto;
+    /*Para fazer o degrade, precisaremos remover essas caracteristicas e colocar em cada 
+    elemento da página*/
+    /*width: 940px;
+    margin: 0 auto;*/
 }
 
 form {
-    /*Espaço entre cabeçalho e formulário, rodapé e formulário de 40px*/
     margin: 40px 0;
 }
 
-/*Extendendo a mesma configuração para outro elemento, usamos a ','. Queremos deixar os legends iguais aos labels*/
-form label, form legend {
-    /*Por padrão, os labels são inline. Ou seja, ocupam apenas o espaço utilizado
-    Queremos que ele ocupe todo o espaço de sua linha para conseguirmos fazer a quebra de linha
-    Alteramos seu display de inline para block*/
+form label, form legend { 
     display: block;
-    /*Aumentando fonte*/
     font-size: 20px;
-    /*Dando uma margem para baixo de 10px*/
     margin:0 0 10px;
 }
 
-/*Extendendo a mesma configuração para outro elemento, usamos a ','. Queremos deixar a textarea igual ao input*/
-/*form input, form textarea {
-        Por padrão, os inputs são inline. Ou seja, ocupam apenas o espaço utilizado
-        Queremos que ele ocupe todo o espaço de sua linha para conseguirmos fazer a quebra de linha
-        Alteramos seu display de inline para block
-    display:block;
-        Dando uma margem para baixo de 10px
-    margin:0 0 20px;
-        10px para cima e para baixo e 25px para os lados no espaçamento interno (entre contúdo e borda)
-    padding: 10px 25px;
-        Largura do campo, ocupando 50% da pagina
-    width: 50%;
-}
-Como será necessário criar um CSS para os inputs do radiobox. Iremo colocar um classe para os demais e fazer um específico
-para o radiobox.*/
 .input-padrao {
     display:block;
     margin:0 0 20px;
@@ -137,75 +119,275 @@ para o radiobox.*/
     width: 50%;
 }
 
-/*Criando estilo para o checkbox*/
 .checkbox {
-    /*Margem para cima e para baixo de 20px e 0 para os lados*/
     margin: 20px 0;
 }
 
-/*Estilo do botão enviar*/
 .enviar {
-    /*Aumentando tamanho*/
     width: 40%;
-    /*Espaçamento interno entre a borda e o texto. 15px para cima e para baixo e 0 para os lados*/
     padding: 15px 0;
-    /*Cor de fundo*/
     background: orange;
-    /*Cor de texto*/
     color: white;
-    /*Texto em negrito*/
     font-weight: bold;
-    /*Tamanho da fonte*/
     font-size: 18px;
-    /*Alterando borda*/
     border: none;
-    /*Campo arredondado*/
     border-radius: 5px;
-    /*Propriedade que permite alguma mudança após certo tempo. Depois de 1s ele faz a alteração no background em .enviar:hover. Substituindo background por all, 
-    faz alteração em todos os elementos*/
     transition: 1s all;
-    /*Sempre que o mouse estiver por cima do elemento, o cursor deve mudar*/
     cursor: pointer;
 }
 
-/*Alterar botão quando mouse estiver em cima*/
 .enviar:hover {
-    /*Mudar a cor de fundo*/
     background: darkorange;
-    /*Aumenta botão em 20% em todos os aspectos*/
-    /*transform: scale(1.2);*/
-    /*Inclina o item em graus. O ultimo item sempre sobrescreve o anterior. No caso o ultimo transform alterou o primeiro*/
-    /*transform: rotate(70deg);*/
-    /*Para não ter esse problema, fazemos*/
-    /*transform: rotate(70deg) scale(1.2);*/
-    /*Iremos manter apenas*/
     transform: scale(1.2);
 }
 
-/*Criando Estilo para a tabela*/
 table {
-    /*Criando espaçamento externo de 20px para cima e 40px para baixo*/
     margin: 20px 0 40px;
 }
 
-/*Criando Estilo para o cabeçalho da tablea*/
 thead {
     background: #555555;
-    /*Cor do item*/
     color: white;
     font-weight: bold;
 }
 
-/*Criando estilo nas celulas da tabela*/
 td, th {
-    /*Criando borda de 1px, solida e cor preta. Para demarcar linhas e colunas*/
     border: 1px solid #000000;
-    /*Espaçamento interno. 8px para cima e para baixo e 15px para os lados*/
     padding: 8px 15px;
 }
 
 
-/*O CSS possui uma hierarquia a ser executado. Podemos fazer CSS de id específico(#), classe(.) e uma tag(p) por exemplo, ou um style no Html
-O CSS da prioridades seguindo: style>id>class>tag. Logo, se anteriormente eu havia setado uma cor para uma tag e depois ela entrou em uma classe,
-ao alterar a cor do elemento na classe, o CSS da prioridade a cor da classe.
-*/
+/*CSS da página inicial - home*/
+.banner {
+    /*100% da largura da pagina*/
+    width: 100%;
+}
+
+/*Alterando título da página*/
+.titulo-principal {
+    /*Alinhado no centro*/
+    text-align: center;
+    /*Mudando fonte, o dobro do padrão. 2em são 2x o tamanho base*/
+    font-size: 2em;
+    /*Espaçamento externo proporcional ao tamanho da fonte para baixo*/
+    margin: 0 0 1em;
+    /*Limpando o float para que ele não afete a pagina. Como ele sera usado ao lado esquerdo da mensagem, limpamos a esquerda.*/
+    clear: left;
+    /*Cor do titulo em rgb. Usamos rgba para adicionar opacidade, com 30% da cor*/
+    /*color: rgba(0,0,0,0.3);*/
+    /*Sombra em textos. 2px em X, 2px em Y e na cor vermelha*/
+    /*text-shadow: 2px 2px red;*/
+}
+
+/*Utilizando pseudo-elemento para mexer em letras específicos do título
+First-letter (primeiro letra), etc conforme pseudo elemento de itens*/
+/*.titulo-principal::first-letter {
+    /*Colocando primeiro letra em negrito*/
+    /*font-weight: bold;
+}
+
+/*Pseudo elemento para mexer antes do elemento titulo-principal*/
+/*.titulo-principal:before {
+    /*Conteudo de exibição, ou seja, não é possivel manipula-lo, seleciona-lo com o mouse, etc.*/
+    /*content: "[ ";
+}
+
+/*Pseudo elemento para mexer depois do elemento titulo-principal*/
+/*.titulo-principal:after {
+    /*Conteudo de exibição, ou seja, não é possivel manipula-lo, seleciona-lo com o mouse, etc*/
+    /*content: " ]";
+}
+
+/*Pseudo-elementos para alterar a primeira linha de todos os paragrafos*/
+/*p::first-line {
+    font-style: italic;
+}*/
+
+/*Colocando estilo na pagina principal*/
+.principal {
+    /*Espaçamento interno de 3em para cima e para baixo e 0 para os lados*/
+    padding: 3em 0;;
+    /*Alternaod cor de fundo*/
+    background: #FEFEFE;
+    /*Inserindo valores da main para o degrade*/
+    width: 940px;
+    margin: 0 auto;
+}
+
+/*Paragrafos da classe principal*/
+.principal p {
+    /*Espaçamento externo proporcional ao tamanho da fonte para baixo*/
+    margin: 0 0 1em;
+}
+
+/*Texto mais forte da classe principal*/
+.principal strong {
+    /*Deixando o texto em Negrito*/
+    font-weight: bold;
+}
+
+/*Todas as vezes que tivermos a tag 'em'*/
+.principal em {
+    /*Deixando em itálico*/
+    font-style: italic;
+}
+
+/*Alterando imagem de utensilios*/
+.utensilios {
+    /*Alterando largura*/
+    width: 120px;
+    /*Colocando o float ao lado esquerdo do texto*/
+    float: left;
+    /*espaçamento externo para direita e para baixo*/
+    margin: 0 20px 20px 0;
+}
+
+/*Adicionando estilo para a section com o mapa*/
+.mapa {
+    /*Espaçamento interno de 3em para cima e para baixo*/
+    padding: 3em 0; 
+    /*Adicionando cor de fundo usando gradiente. Com o gradiente, fazemos uma transição linear ou radial
+    com as cores passadas por parametro (Podem ser varias cores), causando o efeito do degrade.
+    Também posso colocar a inclinação da transição. Exemplo, colocar 45deg, 90deg, na frente das cores.
+    Também posso definir o quanto cada cor ocupa dentro do degrade colocando 80% na frente do cinza por exemplo*/
+    background: linear-gradient(#FEFEFE, #888888);   
+}
+
+/*Divisão para o mapa*/
+.mapa-conteudo {
+    /*Inserindo valores da main para o degrade*/
+    width: 940px;
+    margin: 0 auto;   
+}
+
+/*Estilo para o paragrafo da section com o mapa*/
+.mapa p {
+    /*Espaçamento exerto de 2em para baixo*/
+    margin: 0 0 2em;
+    /*Centralizando texto*/
+    text-align: center;
+}
+
+/*Section beneficios*/
+.beneficios {
+    /*ESpaçamento interno de 3em para cima e para baixo*/
+    padding: 3em 0;
+    /*Alterando cor de fundo*/
+    background: #888888;
+    /*Criando sombra interna. Usamos inset*/
+    /*box-shadow: inset 0 0  30px #FF0000;*/
+}
+
+/*Estilo para a div de beneficios*/
+.conteudo-beneficios {
+    /*Largura*/
+    width: 640px;
+    /*Espaçamento automatico externo para os lados*/
+    margin: 0 auto;
+}
+
+
+/*Estilo para lista de beneficios*/
+.lista-beneficios {
+    /*Largura*/
+    width: 40%;
+    /*Alterando display para deixar os elementos um embaixo do outro sem ocupar 100% da pagina*/
+    display: inline-block;
+    /*Alinhando com a parte de cima*/
+    vertical-align: top;
+}
+
+/*EStilo para os itens de beneficios*/
+.itens {
+    /*Modificando altura da linha em relação ao tamanho da fonte (50% a mais do tamanho da fonte)*/
+    line-height: 1.5;
+}
+
+/*Pseudo-elemento de itens. Para pegar apenas o primeiro item por exemplo
+First-child (primeiro elemento), last-child (ultimo elemento), nth-child(numero) (Encontra o elemento na posição 'numero')
+no nth eu consigo pegar todos os elementos pares (2n) e impares (2n+1)*/
+.itens:first-child {
+    /*Colocando em negrito*/
+    font-weight: bold;
+}
+
+/*Adicionando estrela usando UNICODE na frente de cada item*/
+.itens::before {
+    /*Conteudo de exibição, ou seja, não é possivel manipula-lo, seleciona-lo com o mouse, etc
+    http://xahlee.info/comp/unicode_stars.html.
+    Apenas copiando e colando a estrela*/
+    content: "★";
+}
+
+/*Alterando imagem dos beneficios*/
+.imagem-beneficios {
+    /*Alterando largura*/
+    width: 60%;
+    /*Adicionando opacidade, vai de 1 a 0.*/
+    opacity: 1;
+    /*Podemos tambem usar o transition para retardar um pouco esse efeito. 400ms*/
+    transition: 400ms;
+    /*Adicionando uma sombra no elemento. Ela tem propriedade do eixo X, eixo Y, grau de espalhamento da sombra, intensidade da borda e da cor, respectivamente
+    5px em X, 10px em Y, 5px espalhados (transparente), 20px de borda e cor preta
+    Podemos adicionar varias sombras colocando uma virgula depois da cor*/
+    box-shadow: 10px 10px 10px 0 #000000;
+}
+
+/*Quando o mouse estiver por cima da imagem, eu consigo ver 70% dela e quando não, 100%*/
+.imagem-beneficios:hover {
+    /*Adicionando opacidade, vai de 1 a 0. Só exibiremos 70% da imagem*/
+    opacity: 0.7;
+}
+
+
+/*Centralizando video*/
+.video {
+    /*Largura*/
+    width: 568px;
+    /*ESpaçamento externo 2em para cima e para baixo e automatico para os lados*/
+    margin: 2em auto
+}
+
+/*Pegando o paragrafo filho do exemplo de seleção avançada após a main*/
+/*main > p {
+    /*Estamos mudando a cor do primeiro elemento filho da main*/
+    /*background: red;
+}
+
+/*Pegando o elemento irmao da imagem com o paragrafo utilizando seleção avançada*/
+/*img + p {
+    /*Alterando cor do elemento p depois da imagem*/
+    /*background: blue;
+}
+
+/*Pegando todos os elementos irmaos da imagem com o paragrafo utilizando seleção avançada*/
+/*img ~ p {
+    /*Alterando cor dos elementos p's depois da imagem*/
+    /*background: yellow;
+}
+
+/*Pegando os elementos irmaos da imagem com o paragrafo utilizando seleção avançada que não são id="paragrafo-2*/
+/*.principal p:not(#paragrafo-2) {
+    /*Alterando cor dos elementos p's que não tem id="paragrafo-2*/
+    /*background: orange;
+}
+
+/*Adicionando midia query para as telas de celular
+Para todas as telas de até 480px (largura maxima) será entregado algumas coisas diferentes*/
+@media screen and (max-width: 480px) {
+    .caixa, .principal, .conteudo-beneficios, .mapa-conteudo, .video {
+        width: auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    nav {
+        position: static;
+    }
+
+    .lista-beneficios, .imagem-beneficios {
+        width: 100%;
+    }
+}

@@ -3,42 +3,150 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
+        <!--Adaptando site para celular-->
+        <meta name="viewport" content="width-device-width">
         <title> Barbearia Alura</title>
-        <link rel="stylesheet" href="style-home.css">      
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <!--Adicionando link para fonte de texto externa-->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" rel="stylesheet">     
     </head>
     <body>
         <header>
-            <h1 class="titulo-principal">Barbearia Alura</h1>
+            <div class="caixa">
+                <h1><img src="logo.png"></h1>
+
+                <nav>
+                    <ul>
+                        <l1><a href="index.html">Home</a></l1>
+                        <l1><a href="produtos.html">Produtos</a></l1>
+                        <l1><a href="contato.html">Contato</a></l1>
+                    </ul>
+                </nav>
+            </div>
         </header>
-        <img id="banner" src="banner.jpg">
+        <img class="banner" src="banner.jpg">
 
-        <div class="principal">
+        <main> 
+            <!--Exemplo de seleção avançada     
+            <p>Exemplo seleção avançada</p>-->     
+            <section class="principal">
+    
+                <h2 class="titulo-principal">Sobre a Barbearia Alura</h2>
+                
+                <!--Inserindo nova imagem-->
+                <img class="utensilios" src="utensilios.jpg" alt="Utensilios de barbeiro">
 
-            <h2 class="titulo-centralizado">Sobre a Barbearia Alura</h2>
-
-            <p>Localizada no coração da cidade a <strong>Barbearia Alura</strong> traz para o mercado o que há de melhor para o seu cabelo e barba. Fundada em 2019, a Barbearia Alura já é destaque na cidade e conquista novos clientes a cada dia.</p>
-        
-            <p id="paragrafo-2"><em>Nossa missão é: <strong>"Proporcionar auto-estima e qualidade de vida aos clientes"</strong>.</em></p>
-        
-            <p>Oferecemos profissionais experientes e antenados às mudanças no mundo da moda. O atendimento possui padrão de excelência e agilidade, garantindo qualidade e satisfação dos nossos clientes.</p>
+                <p>Localizada no coração da cidade a <strong>Barbearia Alura</strong> traz para o mercado o que há de melhor para o seu cabelo e barba. Fundada em 2019, a Barbearia Alura já é destaque na cidade e conquista novos clientes a cada dia.</p>
             
-        </div>
-        <div class="beneficios">
-            <h3 class="titulo-centralizado">Beneficios</h3>
+                <p id="paragrafo-2"><em>Nossa missão é: <strong>"Proporcionar auto-estima e qualidade de vida aos clientes"</strong>.</em></p>
+            
+                <p>Oferecemos profissionais experientes e antenados às mudanças no mundo da moda. O atendimento possui padrão de excelência e agilidade, garantindo qualidade e satisfação dos nossos clientes.</p>
+                
+            </section>
 
-            <ul>
-                <li class="itens">*Atendimento aos clientes</li>
-                <li class="itens">*Espaço diferenciado</li>
-                <li class="itens">*Localização</li>
-                <li class="itens">*Profissionais Qualificados</li>           
-            </ul>
+            <!--Criando section para inserir um mapa-->
+            <section class="mapa">
+                <h3 class="titulo-principal">Nosso estabelecimento</h3>
+                <p>Nosso estabelecimento está localizado no coração da cidade.</p>
 
-            <img src="beneficios.jpg" class="imagembeneficios">
-        </div>
+                <!--Inserindo mapa-->
+                <div class="mapa-conteudo">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3692.556085502408!2d-45.69938628467045!3d-22.25691562060037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1674846342314!5m2!1spt-BR!2sbr" 
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
+    
+            <section class="beneficios">
+                <h3 class="titulo-principal">Beneficios</h3>
+                
+                <!--Inserindo div-->
+                <div class="conteudo-beneficios">
+                    <ul class="lista-beneficios">
+                        <li class="itens">Atendimento aos clientes</li>
+                        <li class="itens">Espaço diferenciado</li>
+                        <li class="itens">Localização</li>
+                        <li class="itens">Profissionais Qualificados</li>
+                        <li class="itens">Pontualidade</li>
+                        <li class="itens">Limpeza</li>           
+                    </ul><img src="beneficios.jpg" class="imagem-beneficios">
+                </div>
+
+                <!--Inserindo vídeo-->
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/wcVVXUV0YUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen></iframe>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <img src="logo-branco.png">
+            <p class="copyright">&copy; Copyright Barbearia Alura - 2023</p>
+        </footer>
     </body>
     
 </html>
 
 <!--
-   
+   Fazendo alterações na página inicial.
+   Adicionando reset.css, header, rodapé, substituindo div por section (div é uma divisão visual e section é uma divisão onde tem conteúdo complexo). 
+   Só devemos usar section quando o bloco for semantico.
+
+   Trocaremos o identificador do banner por uma classe. Por padrão, sempre que queremos falar de estilo, usamos classe
+   sempre que queremos falar de comportamento, usamos identificador.
+
+   Iremos inserir uma imagem ao lado do paragrafo embaixo do titulo. Iremos utilizar o float para conseguir fazer essa operação
+   adicionamos no CSS. O float afeta toda a pagina, precisaremos evitar isso adicionando clear:left em titulo principal.
+   Alternativa correta! Tanto o float:left quanto o float: right servem para que o elemento se destaque na tela, deixe de ocupar o espaço em que estava, 
+   para que os outros elementos possam se posicionar ao redor dele.
+
+   Iremos aprender a utilizar fontes externas para incorporar nossa página. Utilizaremos uma fonte aberta. 
+   Usaremos o google fonts que nos mostrar todos os tipos de fontes abertas, no caso, usaremos montserrat. 
+   Pegamos o link de importação e colocaremos no head.
+
+   Agora iremos importar um mapa. Entre a parte principal e de beneficios, iremos criar um outra section onde criaremos a classe mapa.
+   Dentro dessa section teremos um h3 com o titulo do mapa e um paragrafo de texto com o conteudo desejado.
+   Iremos utilizar o google maps. No menu da esquerda, tem a opção 'compartilhar ou incorporar mapa'. Pegar o link html e
+   colar no local que desejamos o mapa. Podemos alterar as propriedades como quisermos.
+
+   Vamos agora inserir um vídeo na tela. Vamos até o youtube:
+   https://www.youtube.com/watch?v=wcVVXUV0YUY
+   Vamos em compartilhar e selecionamos incorporar. Para centralizar o video, vamos criar um div envolvendo o iframe e atraves dele
+   iremos centralizar
+
+   No CSS temos pseudo elementos (hover, active, visited, required, etc). Iremos usar na página inicial.
+   Criaremos uma nova divisao em torno da lista e imagem de beneficios.
+   Quando utilizamos o display inline block, não podemos deixar espaços na pagina. Portanto, devemos deixar os elementos
+   colados um ao outro. Faremos isso para deixar a lista e a imagem dos beneficios lado a lado.
+
+   Colocaremos um degrade no fundo da página. Utilizaremos o conceito de gradiente.
+   Vamos fazer algumas alterações do CSS da main, principal, beneficios e do mapa. Criaremos um div para o mapa.
+   Assim, conseguiremos alterar a cor de fundo do mapa para fazer o degrade e deixa-lo centralizado.
+
+   Utilizaremos um pseudo elemento do CSS para alterar estilos de uma letra do título da classe principal por exemplo.
+
+
+   Falaremos agora sobre seletores avançados, fazendo seleçao de elementos de forma mais rebuscada. Utilizaremos duas situações como exemplo
+   A primeira é colocando um paragrafo na main. Para alterar este elemento, poderiamos criar uma classe para ele ou utilizar a seleção avançada.
+   atraves do caractere '>' no CSS, poderemos pegar o primeiro filho da classe main e fazer alterações nele.
+   Para pegar um "irmao", ou seja, o elemento seguinte a uma outra tag, usamos o simbolo '+' no CSS. Adicionando um item só para exemplificar em um dos paragrafos.
+
+   Fazendo calculos no CSS. Calcular largura, altura, etc de um elemento. Devemos preparar nosso html para todos os tipos e tamanhos de tela.
+   Usando a ferramenta de desenvolvedor para ver essas alterações. NO lugar dos tamanhos, podemos colocar a propriedade calc()
+   que fará um cálculo. Podemos fazer calc(40% - 26px).
+
+   Vamos agora adicionar opacidade em nossos elementos. Em imagem-beneficios iremos colocar uma opacidade no elemento.
+   Utilizaremos também as sombras nos elementos.
+
+
+   Versão mobile de nosso HTML. Para textar, usamos a ferramento de desenvolvedor. Uma das imagens no canto superior
+   temos um celular. Clicando nele, o site passa a se comportar como se tivesse em um celular.
+   Para o navegador entregar o site adequado para o celular, precisaremos adaptar nosso html.
+   Para isso, utilizaremos a tag meta novamente
+   <meta name="viewport" content="width-device-width">
+   name - quantidade de pixels que tem naquele visualização da tela
+   content - largura do dispositivo
+   Ainda, na parte superior da tela, poderemos ver como seria a tela em cada celular.
+   Agora, no CSS precisaremos adicionar as midias querys.
 -->
